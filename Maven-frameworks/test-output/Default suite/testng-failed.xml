@@ -3,17 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.acttitime.testscrpits.CustomerTest">
+      <class name="com.acttime.createNewTask.TaskTest">
         <methods>
           <include name="configLoginBM"/>
           <include name="configBrowserBC"/>
           <include name="configCloseBrowserAC"/>
-          <include name="CreateCustomerTest"/>
           <include name="configLogoutAM"/>
-          <include name="CreateCustomerWithDescription"/>
+          <include name="createTaskTest"/>
           <include name="configBeforeSuite"/>
         </methods>
-      </class> <!-- com.acttitime.testscrpits.CustomerTest -->
+      </class> <!-- com.acttime.createNewTask.TaskTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

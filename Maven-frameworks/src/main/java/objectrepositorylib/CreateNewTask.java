@@ -1,8 +1,10 @@
 package objectrepositorylib;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.actitme.genriclib.BaseClass;
 import com.actitme.genriclib.WebDriverCommonLib;
 
 /**
@@ -26,20 +28,30 @@ public class CreateNewTask {
 	private WebElement nonBillableSelect;
 	@FindBy(xpath="(//input[@type='checkbox'])[2]")
 	private WebElement CheckBox;
-	
-   public void newCustomer(){
-	   newCustomer.sendKeys();
+	@FindBy(xpath="//div[@class='buttonIcon']/span[text()='Create Tasks']")
+	private WebElement createTaskButton;
+   public void selectDropDown(String customerName){
+	   selectDropDown.click();
+	   String exsistingCustomer="//a[text()='"+customerName+"']";
+	   BaseClass.driver.findElement(By.xpath(exsistingCustomer)).click();
    }
-   public void newProject(){
-	   newProject.sendKeys();
+   public void newProject(String projectName){
+	   newProject.sendKeys(projectName);
    }
-   public void enterTaskNameEdit1(){
-	   enterTaskNameEdit1.sendKeys();
+   public void enterTaskNameEdit1(String taskName){
+	   enterTaskNameEdit1.sendKeys(taskName);
    }
-   public void desLineCalender(){
+   public void desLineCalender(String deadMonth,String deadDate){
 	   
+   }
+   public void nonBillableSelect(String typeOfTesting) {
+	   nonBillableSelect.click();
+	   wLib.Select(nonBillableSelect, typeOfTesting);
    }
    public void CheckBox(){
 	   CheckBox.click();
+   }
+   public void createTaskButton() {
+	   createTaskButton.click();
    }
 }
